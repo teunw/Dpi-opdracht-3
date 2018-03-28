@@ -25,7 +25,7 @@ fun startEmittingThread(channel: Channel, randomsentences: List<String>, name: S
     thread {
         var i = 0
         while (!Thread.interrupted()) {
-            channel.basicPublish("logs", "", null, "$name: ${i++}}".toByteArray())
+            channel.basicPublish("logs", "", null, "$name: ${i++}".toByteArray())
             Thread.sleep(1000)
         }
     }
